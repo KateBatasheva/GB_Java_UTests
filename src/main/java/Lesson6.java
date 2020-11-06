@@ -6,35 +6,25 @@ public class Lesson6 {
     //Написать набор тестов для этого метода (по 3-4 варианта входных данных).
     //Вх: [ 1 2 4 4 2 3 4 1 7 ] -> вых: [ 1 7 ].
 
+
+    // 2. Написать метод, который проверяет состав массива из чисел 1 и 4.
+    // Если в нем нет хоть одной четверки или единицы, то метод вернет false;
+    // Если есть число отличное от 1 или 4 то вернуть false;
+    // Написать набор тестов для этого метода (по 3-4 варианта входных данных).
+    //[ 1 1 1 4 4 1 4 4 ] -> true
+    //[ 1 1 1 1 1 1 ] -> false
+    //[ 4 4 4 4 ] -> false
+    //[ 1 4 4 1 1 4 3 ] -> false
+
     public static void main (String[] args){
+        TestClass tc = new TestClass();
+//        int [] arrtest = {3,4,5,6,6,7};
+//        arrtest = tc.after4(arrtest);
+//         System.out.println(Arrays.toString(arrtest));
 
-        int [] arrtest = {3,4,5,6,6,7};
-        arrtest = after4(arrtest);
-         System.out.println(Arrays.toString(arrtest));
+        int [] arr = {4,4,4,4};
+         System.out.println(tc.test14(arr));
 
-    }
 
-    public static int[] after4 (int[] arr){
-        if (arr.length <1){
-            throw new RuntimeException();
-        }
-        int count = 0;
-        int i;
-        for (i = 0; i < arr.length ; i++) {
-            if (arr[i] == 4) {
-                count++;
-                break;
-            }
-        }
-        if (count ==0) {
-            throw new RuntimeException();
-        }
-        int [] arr2 = new int[arr.length-i-1];
-        i++;
-
-        for (int j = 0; j <arr2.length ; j++, i++) {
-            arr2[j] = arr[i];
-        }
-        return arr2;
     }
 }
